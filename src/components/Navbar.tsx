@@ -1,4 +1,6 @@
 "use client"; // Add this directive at the top
+import Image from 'next/image';
+
 
 import React, { useState } from 'react';
 import { Menu, X, Shield, Download, Phone, FileText, Users, CreditCard } from 'lucide-react';
@@ -15,12 +17,18 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center">
-              <Shield className="h-8 w-8 text-[#e01c4e] mr-2" />
-              <span className="text-2xl font-bold text-[#15479e]">PayNasi</span>
-            </div>
-          </div>
+<div className="flex-shrink-0 flex items-center space-x-2">
+  <Image
+    src="/images/logo.jpg"
+    alt="PayNasi Logo"
+    width={40}
+    height={40}
+    className="object-contain"
+    priority
+  />
+  <span className="text-2xl font-bold text-[#15479e]">PayNasi</span>
+</div>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
