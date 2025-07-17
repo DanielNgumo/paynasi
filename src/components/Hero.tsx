@@ -1,5 +1,7 @@
 import React from 'react';
 import { Shield, CheckCircle, Download, Play, ArrowRight, Star, Users, CreditCard, Lock } from 'lucide-react';
+import Image from "next/image";
+
 
 const HeroSection = () => {
   return (
@@ -109,10 +111,23 @@ const HeroSection = () => {
                 <div className="h-full bg-gradient-to-b from-blue-50 to-white p-6">
                   {/* Header */}
                   <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center space-x-2">
+                    {/* <div className="flex items-center space-x-2">
                       <Shield className="h-6 w-6 text-[#e01c4e]" />
                       <span className="font-bold text-[#15479e]">PayNasi</span>
-                    </div>
+                    </div> */}
+                    <div className="flex items-center space-x-2">
+  {/* Real logo */}
+  <Image
+    src="/images/logo.jpg"      /* file lives in /public/images/ */
+    alt="PayNasi logo"
+    width={24}                  /* tweak sizes as needed */
+    height={24}
+    className="h-6 w-6 object-contain"
+    priority                    /* optional: pre‑loads above‑the‑fold */
+  />
+  <span className="font-bold text-[#15479e]">PayNasi</span>
+</div>
+
                     <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
                   </div>
                   
