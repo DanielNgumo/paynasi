@@ -5,14 +5,11 @@ import {
   Eye, 
   Package, 
   Shield, 
-  Search, 
-  DollarSign, 
   CheckCircle, 
-  TrendingUp, 
-  ShoppingCart,
-  User,
-  Users,
-  ArrowRight
+  DollarSign, 
+  Users, 
+  ArrowRight,
+  ShoppingCart
 } from 'lucide-react';
 
 const BenefitsSection = () => {
@@ -20,27 +17,27 @@ const BenefitsSection = () => {
 
   const buyerBenefits = [
     {
-      icon: Eye,
-      title: "Inspect Before You Pay",
-      description: "Release money only after confirming delivery",
-      color: "text-[#17b5a7]"
-    },
-    {
-      icon: Package,
-      title: "Real-Time Tracking",
-      description: "Get notifications every step of the way",
-      color: "text-[#e01c4e]"
-    },
-    {
       icon: Shield,
-      title: "Total Fund Protection",
-      description: "Your money is held safely until satisfied",
+      title: "Pay When It’s Real",
+      description: "Your money stays in escrow and is only released when you receive and approve the item or service.",
       color: "text-[#15479e]"
     },
     {
-      icon: Search,
-      title: "Verify Before You Buy",
-      description: "Avoid fraud with secure verification",
+      icon: CheckCircle,
+      title: "Trusted Sellers Only",
+      description: "Sellers who accept PayNasi are verified and ready to do honest business.",
+      color: "text-[#17b5a7]"
+    },
+    {
+      icon: Eye,
+      title: "You're in Control",
+      description: "Inspect before you pay. If it’s not right, you can initiate a return within the set timeframe.",
+      color: "text-[#e01c4e]"
+    },
+    {
+      icon: Package,
+      title: "Track Every Step",
+      description: "Follow the progress of your order or project—from payment to delivery or completion.",
       color: "text-[#17b5a7]"
     }
   ];
@@ -48,26 +45,26 @@ const BenefitsSection = () => {
   const sellerBenefits = [
     {
       icon: DollarSign,
-      title: "Zero Registration Fees",
-      description: "Sign up 100% free, no hidden costs",
+      title: "Payment First",
+      description: "You get confirmation that the buyer has paid before you release any goods or services.",
       color: "text-[#17b5a7]"
     },
     {
-      icon: CheckCircle,
-      title: "Guaranteed Funds",
-      description: "Money confirmed before delivery",
+      icon: Users,
+      title: "Serious Buyers Only",
+      description: "Only engage with buyers who are committed—PayNasi users are ready to transact.",
       color: "text-[#e01c4e]"
     },
     {
-      icon: ShoppingCart,
-      title: "No Risky Cash Deliveries",
-      description: "Eliminate uncertain cash transactions",
+      icon: Shield,
+      title: "Secured Earnings",
+      description: "Your product or service is protected; payment is guaranteed once terms are met.",
       color: "text-[#15479e]"
     },
     {
-      icon: TrendingUp,
-      title: "Grow With Confidence",
-      description: "Win trust even with first-time buyers",
+      icon: Package,
+      title: "Real-Time Tracking",
+      description: "Stay updated on every step—track product delivery or service milestones in real time.",
       color: "text-[#17b5a7]"
     }
   ];
@@ -120,7 +117,7 @@ const BenefitsSection = () => {
             const Icon = benefit.icon;
             return (
               <div
-              key={index}
+                key={index}
                 className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 border border-gray-100"
               >
                 <div className={`w-14 h-14 rounded-xl ${benefit.color === 'text-[#17b5a7]' ? 'bg-[#17b5a7]/10' : benefit.color === 'text-[#e01c4e]' ? 'bg-[#e01c4e]/10' : 'bg-[#15479e]/10'} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
@@ -137,7 +134,7 @@ const BenefitsSection = () => {
         <div className="bg-gradient-to-r from-[#15479e] to-[#17b5a7] rounded-2xl p-8 md:p-12 text-white text-center">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              Trust Optional, Not Mandatory
+              PayNasi Trust is Optional, Not Mandatory.
             </h3>
             <p className="text-xl text-blue-100 mb-8">
               Most transactions rely on trust. PayNasi adds safety — making every deal secure.

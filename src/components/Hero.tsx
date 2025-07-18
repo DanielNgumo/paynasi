@@ -62,11 +62,11 @@ const HeroSection = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-5 w-5 text-[#17b5a7] flex-shrink-0" />
-                <span className="text-blue-100">Real-time tracking</span>
+                <span className="text-blue-100">Verify payment before you Send goods.</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-5 w-5 text-[#17b5a7] flex-shrink-0" />
-                <span className="text-blue-100">Total fund protection</span>
+                <span className="text-blue-100">Total transactions protection</span>
               </div>
             </div>
 

@@ -1,7 +1,8 @@
-"use client"; // Add this directive at the top
+// components/Navbar.tsx
+"use client";
+
 import Image from 'next/image';
-
-
+import Link from 'next/link'; // Import Link
 import React, { useState } from 'react';
 import { Menu, X, Shield, Download, Phone, FileText, Users, CreditCard } from 'lucide-react';
 
@@ -17,34 +18,33 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-<div className="flex-shrink-0 flex items-center space-x-2">
-  <Image
-    src="/images/logo.jpg"
-    alt="PayNasi Logo"
-    width={40}
-    height={40}
-    className="object-contain"
-    priority
-  />
-  <span className="text-2xl font-bold text-[#15479e]">PayNasi</span>
-</div>
-
+          <div className="flex-shrink-0 flex items-center space-x-2">
+            <Image
+              src="/images/logo.jpg"
+              alt="PayNasi Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+              priority
+            />
+            <span className="text-2xl font-bold text-[#15479e]">PayNasi</span>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a
+              <Link
                 href="/"
                 className="text-gray-700 hover:text-[#e01c4e] px-3 py-2 text-sm font-medium transition-colors duration-200"
               >
                 Home
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/about"
                 className="text-gray-700 hover:text-[#e01c4e] px-3 py-2 text-sm font-medium transition-colors duration-200"
               >
                 About
-              </a>
+              </Link>
               <div className="relative group">
                 <button className="text-gray-700 hover:text-[#e01c4e] px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center">
                   How It Works
@@ -54,33 +54,33 @@ const Navbar = () => {
                 </button>
                 <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
                   <div className="py-1">
-                    <a href="/buyer" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#e01c4e]">
+                    <Link href="/buyer" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#e01c4e]">
                       <Users className="h-4 w-4 mr-2" />
                       For Buyers
-                    </a>
-                    <a href="/seller" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#e01c4e]">
+                    </Link>
+                    <Link href="/seller" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#e01c4e]">
                       <CreditCard className="h-4 w-4 mr-2" />
                       For Sellers
-                    </a>
-                    <a href="/escrow" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#e01c4e]">
+                    </Link>
+                    <Link href="/escrow" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#e01c4e]">
                       <Shield className="h-4 w-4 mr-2" />
                       Escrow Process
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
-              <a
+              <Link
                 href="/contact"
                 className="text-gray-700 hover:text-[#e01c4e] px-3 py-2 text-sm font-medium transition-colors duration-200"
               >
                 Contact
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/terms"
                 className="text-gray-700 hover:text-[#e01c4e] px-3 py-2 text-sm font-medium transition-colors duration-200"
               >
                 Terms
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -112,48 +112,48 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <a
+            <Link
               href="/"
               className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md"
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md"
             >
               About
-            </a>
-            <a
+            </Link>
+            <Link
               href="/buyer"
               className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md"
             >
               For Buyers
-            </a>
-            <a
+            </Link>
+            <Link
               href="/seller"
               className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md"
             >
               For Sellers
-            </a>
-            <a
+            </Link>
+            <Link
               href="/escrow"
               className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md"
             >
               Escrow Process
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md"
             >
               Contact
-            </a>
-            <a
+            </Link>
+            <Link
               href="/terms"
               className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md"
             >
               Terms
-            </a>
+            </Link>
           </div>
           <div className="px-4 py-3 border-t border-gray-200">
             <button className="w-full bg-[#e01c4e] text-white px-4 py-2 rounded-lg hover:bg-[#c01640] transition-colors duration-200 flex items-center justify-center space-x-2 font-medium">

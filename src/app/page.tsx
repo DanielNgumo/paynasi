@@ -12,13 +12,11 @@ import ChatWidget from "@/components/ChatWidget";
 export default function Home() {
   return (
     <div>
-      <Navbar />
       <HeroSection />
       <HowItWorksSection />
       <BenefitsSection />
       <TestimonialsSection />
       <FAQSection />
-      <Footer />
       <ChatWidget />
     </div>
   );

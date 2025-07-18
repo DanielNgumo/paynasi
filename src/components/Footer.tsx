@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { 
   Shield, 
   Mail, 
@@ -9,7 +10,6 @@ import {
   Twitter, 
   Instagram, 
   Linkedin,
-  ExternalLink,
   ArrowRight,
   CheckCircle,
   Users,
@@ -32,7 +32,7 @@ const Footer = () => {
               <span className="text-2xl font-bold">PayNasi</span>
             </div>
             <p className="text-blue-100 leading-relaxed">
-              A secure mobile escrow platform that protects both buyers and sellers during transactions. 
+              A secure mobile xAI escrow platform that protects both buyers and sellers during transactions. 
               Your money moves safely, fairly, and only when it should.
             </p>
             
@@ -76,26 +76,26 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="font-semibold text-white text-lg">Quick Links</h4>
             <div className="space-y-3">
-              <a href="/" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
+              <Link href="/" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
                 <ArrowRight className="h-4 w-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 Home
-              </a>
-              <a href="/about" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
+              </Link>
+              <Link href="/about" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
                 <ArrowRight className="h-4 w-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 About Us
-              </a>
-              <a href="/buyer" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
+              </Link>
+              <Link href="/buyer" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
                 <Users className="h-4 w-4 mr-2 text-[#17b5a7]" />
                 For Buyers
-              </a>
-              <a href="/seller" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
+              </Link>
+              <Link href="/seller" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
                 <CreditCard className="h-4 w-4 mr-2 text-[#17b5a7]" />
                 For Sellers
-              </a>
-              <a href="/escrow" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
+              </Link>
+              <Link href="/escrow" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
                 <Lock className="h-4 w-4 mr-2 text-[#17b5a7]" />
                 Escrow Process
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -103,26 +103,26 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="font-semibold text-white text-lg">Support & Legal</h4>
             <div className="space-y-3">
-              <a href="/contact" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
+              <Link href="/contact" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
                 <ArrowRight className="h-4 w-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 Contact Support
-              </a>
-              <a href="/terms" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
+              </Link>
+              <Link href="/terms" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
                 <ArrowRight className="h-4 w-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 Terms of Service
-              </a>
-              <a href="/privacy" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
+              </Link>
+              <Link href="/privacy" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
                 <ArrowRight className="h-4 w-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 Privacy Policy
-              </a>
-              <a href="/faq" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
+              </Link>
+              <Link href="/faq" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
                 <ArrowRight className="h-4 w-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 FAQ
-              </a>
-              <a href="/security" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
+              </Link>
+              <Link href="/security" className="flex items-center text-blue-100 hover:text-white transition-colors duration-200">
                 <ArrowRight className="h-4 w-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 Security
-              </a>
+              </Link>
             </div>
 
             {/* Trust Badges */}
@@ -140,6 +140,9 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
+
+
 
           {/* Contact & Download */}
           <div className="space-y-6">
@@ -162,7 +165,7 @@ const Footer = () => {
                 <div>
                   <p className="text-blue-100">Call Us</p>
                   <a href="tel:+254700000000" className="text-white hover:text-[#17b5a7] transition-colors">
-                    +254 700 000 000
+  +254 700 000 000
                   </a>
                 </div>
               </div>
@@ -207,6 +210,10 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
+
+
+
         </div>
       </div>
 
@@ -219,9 +226,9 @@ const Footer = () => {
               <span className="ml-2">Your money. Your rules. Our protection.</span>
             </div>
             <div className="flex items-center space-x-6 text-sm">
-              <a href="/terms" className="text-blue-100 hover:text-white transition-colors">Terms</a>
-              <a href="/privacy" className="text-blue-100 hover:text-white transition-colors">Privacy</a>
-              <a href="/cookies" className="text-blue-100 hover:text-white transition-colors">Cookies</a>
+              <Link href="/terms" className="text-blue-100 hover:text-white transition-colors">Terms</Link>
+              <Link href="/privacy" className="text-blue-100 hover:text-white transition-colors">Privacy</Link>
+              <Link href="/cookies" className="text-blue-100 hover:text-white transition-colors">Cookies</Link>
               <div className="flex items-center space-x-2">
                 <Shield className="h-4 w-4 text-[#17b5a7]" />
                 <span className="text-blue-100">Secure Platform</span>
