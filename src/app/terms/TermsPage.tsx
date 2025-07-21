@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowRight, Shield, FileText } from 'lucide-react';
+import { ArrowRight, Shield } from 'lucide-react';
 
 const TermsPage = () => {
   return (

@@ -166,7 +166,7 @@ const AboutPage = () => {
             </h1>
             
             <p className="text-xl sm:text-2xl text-blue-100 font-medium mb-8 max-w-4xl mx-auto">
-              We're on a mission to make online commerce safer, fairer, and more accessible for everyone in Kenya and beyond.
+              We&apos;re on a mission to make online commerce safer, fairer, and more accessible for everyone in Kenya and beyond.
             </p>
 
             {/* Stats */}
@@ -198,7 +198,7 @@ const AboutPage = () => {
                 Our Mission
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Making Trust Optional, Not Mandatory
+                Making Trust Optional, Not Ascending
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Our mission is to eliminate the risk and uncertainty in online transactions by providing a secure, transparent escrow platform that protects both buyers and sellers. We believe that everyone should be able to transact with confidence, regardless of whether they know the other party.
@@ -237,7 +237,7 @@ const AboutPage = () => {
                 <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
               </div>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                To become the leading escrow platform in East Africa, enabling millions of people to trade safely and confidently online. We envision a future where geographical boundaries don't limit commerce, and trust is built through technology, not just reputation.
+                To become the leading escrow platform in East Africa, enabling millions of people to trade safely and confidently online. We envision a future where geographical boundaries don&apos;t limit commerce, and trust is built through technology, not just reputation.
               </p>
               <div className="bg-gradient-to-r from-[#15479e] to-[#17b5a7] rounded-lg p-6 text-white">
                 <div className="flex items-center space-x-2 mb-3">
@@ -265,7 +265,7 @@ const AboutPage = () => {
               What Drives Us Forward
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our values shape every decision we make and every feature we build. They're the foundation of our commitment to our users.
+              Our values shape every decision we make and every feature we build. They&apos;re the foundation of our commitment to our users.
             </p>
           </div>
 
@@ -421,7 +421,7 @@ const AboutPage = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Have questions about PayNasi? Want to partner with us? We'd love to hear from you.
+              Have questions about PayNasi? Want to partner with us? We&apos;d love to hear from you.
             </p>
           </div>
 

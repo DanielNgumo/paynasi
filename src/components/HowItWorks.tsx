@@ -246,18 +246,18 @@ const HowItWorksSection = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="bg-[#15479e]/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-[#15479e]" />
-                  </div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">{benefit.title}</h4>
-                  <p className="text-gray-600 text-sm">{benefit.description}</p>
-                </div>
-              );
-            })}
+{benefits.map((benefit) => {
+  const Icon = benefit.icon;
+  return (
+    <div key={benefit.title} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div className="bg-[#15479e]/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+        <Icon className="h-6 w-6 text-[#15479e]" />
+      </div>
+      <h4 className="text-lg font-semibold text-gray-900 mb-2">{benefit.title}</h4>
+      <p className="text-gray-600 text-sm">{benefit.description}</p>
+    </div>
+  );
+})}
           </div>
         </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Star, Quote, ChevronLeft, ChevronRight, Shield, Heart } from 'lucide-react';
 
 const TestimonialsSection = () => {
@@ -69,9 +69,9 @@ const TestimonialsSection = () => {
     }
   ];
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
@@ -80,7 +80,7 @@ const TestimonialsSection = () => {
   useEffect(() => {
     const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [nextSlide]);
 
   const getVisibleTestimonials = () => {
     const visible = [];
@@ -127,7 +127,7 @@ const TestimonialsSection = () => {
 
           {/* Testimonials Grid */}
           <div className="grid md:grid-cols-3 gap-8">
-            {getVisibleTestimonials().map((testimonial, index) => (
+            {getVisibleTestimonials().map((testimonial) => (
               <div
                 key={testimonial.id}
                 className="bg-gray-50 rounded-2xl p-6 relative transition-all duration-500 hover:shadow-lg hover:bg-white"
@@ -146,7 +146,7 @@ const TestimonialsSection = () => {
 
                 {/* Testimonial Text */}
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  "{testimonial.text}"
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
 
                 {/* User Info */}
@@ -156,7 +156,7 @@ const TestimonialsSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-500">{testimonial.role} • {testimonial.location}</p>
+                    <p className="text-sm text-gray-500">{testimonial.role} &bull; {testimonial.location}</p>
                   </div>
                 </div>
               </div>
@@ -202,7 +202,7 @@ const TestimonialsSection = () => {
           <Shield className="h-12 w-12 text-[#15479e] mx-auto mb-4" />
           <h3 className="text-2xl font-bold text-gray-900 mb-2">Join the Trust Revolution</h3>
           <p className="text-gray-600">
-            Be part of Kenya's most trusted transaction platform
+            Be part of Kenya&apos;s most trusted transaction platform
           </p>
         </div>
       </div>
