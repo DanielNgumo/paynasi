@@ -150,15 +150,13 @@ const HowItWorksSection = () => {
               
               {/* Steps */}
               <div className="grid grid-cols-4 gap-8">
-                {steps.map((step, index) => {
+                {steps.map((step) => {
                   const Icon = step.icon;
                   return (
-                    <div
-                      key={step.id}
-                      className={`relative cursor-pointer transition-all duration-300 ${
-                        activeStep === index ? 'transform scale-105' : ''
+                    <div key={step.id} className={`relative cursor-pointer transition-all duration-300 ${
+                        activeStep === step.id - 1 ? 'transform scale-105' : ''
                       }`}
-                      onMouseEnter={() => setActiveStep(index)}
+                      onMouseEnter={() => setActiveStep(step.id - 1)}
                     >
                       {/* Step Circle */}
                       <div className={`relative z-10 w-16 h-16 rounded-full ${step.bgColor} flex items-center justify-center mx-auto mb-6 shadow-lg`}>
