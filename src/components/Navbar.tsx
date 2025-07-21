@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Shield, Download, Phone, FileText, Users, CreditCard, CheckCircle, Lock, Clock, ArrowRight } from 'lucide-react';
+import { Menu, X, Shield, Download, Users, CreditCard, CheckCircle, Lock, Clock, ArrowRight } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

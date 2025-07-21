@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { MessageCircle, X, Send, Phone, Mail, Headphones } from 'lucide-react';
+import {  X, Send,  Headphones } from 'lucide-react';
 
 const ChatWidget: React.FC = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);

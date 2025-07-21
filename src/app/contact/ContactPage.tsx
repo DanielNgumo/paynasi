@@ -14,9 +14,7 @@ import {
   ArrowRight,
   Star,
   Headphones,
-  Globe,
   Smartphone,
-  AlertCircle,
   Heart
 } from 'lucide-react';
 
@@ -32,45 +30,32 @@ const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-interface InputChangeEvent extends React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement> {}
-
-const handleInputChange = (e: InputChangeEvent) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData((prev: ContactFormData) => ({
-        ...prev,
-        [name]: value
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value
     }));
-};
+  };
 
-interface ContactFormData {
-    name: string;
-    email: string;
-    phone: string;
-    subject: string;
-    message: string;
-    inquiryType: string;
-}
-
-interface SubmitEvent extends React.FormEvent<HTMLButtonElement> {}
-
-const handleSubmit = async (e: SubmitEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     // Simulate form submission
     setTimeout(() => {
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            subject: '',
-            message: '',
-            inquiryType: 'general'
-        });
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        inquiryType: 'general'
+      });
     }, 2000);
-};
+  };
 
   const contactMethods = [
     {
@@ -169,12 +154,11 @@ const handleSubmit = async (e: SubmitEvent) => {
             </h1>
             
             <p className="text-xl sm:text-2xl text-blue-100 font-medium mb-4">
-              Questions? Feedback? We'd love to hear from you.
+              Questions? Feedback? We would love to hear from you.
             </p>
             
             <p className="text-lg text-blue-100 leading-relaxed max-w-2xl mx-auto">
-              Our dedicated support team is here to help you with any questions about PayNasi's 
-              secure escrow platform. Reach out anytime!
+              Our dedicated support team is here to help you with any questions about {'PayNasi\'s'} secure escrow platform. Reach out anytime!
             </p>
           </div>
         </div>
@@ -195,12 +179,13 @@ const handleSubmit = async (e: SubmitEvent) => {
               Multiple Ways to <span className="text-[#e01c4e]">Connect</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Choose the method that works best for you. We're committed to providing 
-              fast, helpful support across all channels.
+              Choose the method that works best for you. We are committed to providing fast, helpful support across all channels.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3
+
+ gap-8 mb-16">
             {contactMethods.map((method, index) => {
               const Icon = method.icon;
               return (
@@ -249,7 +234,7 @@ const handleSubmit = async (e: SubmitEvent) => {
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Send us a Message</h2>
                 <p className="text-gray-600">
-                  Fill out the form below and we'll get back to you within 24 hours.
+                  Fill out the form below and we will get back to you within 24 hours.
                 </p>
               </div>
 
@@ -260,7 +245,7 @@ const handleSubmit = async (e: SubmitEvent) => {
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Message Sent!</h3>
                   <p className="text-gray-600 mb-6">
-                    Thank you for reaching out. We'll get back to you soon.
+                    Thank you for reaching out. We will get back to you soon.
                   </p>
                   <button 
                     onClick={() => setIsSubmitted(false)}
@@ -270,7 +255,7 @@ const handleSubmit = async (e: SubmitEvent) => {
                   </button>
                 </div>
               ) : (
-                <div className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -372,8 +357,7 @@ const handleSubmit = async (e: SubmitEvent) => {
                   </div>
 
                   <button
-                    type="button"
-                    onClick={handleSubmit}
+                    type="submit"
                     disabled={isSubmitting}
                     className="w-full bg-[#e01c4e] hover:bg-[#c01640] disabled:bg-gray-400 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors duration-200"
                   >
@@ -389,7 +373,7 @@ const handleSubmit = async (e: SubmitEvent) => {
                       </>
                     )}
                   </button>
-                </div>
+                </form>
               )}
             </div>
 
@@ -406,7 +390,7 @@ const handleSubmit = async (e: SubmitEvent) => {
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
                       <p className="text-gray-600">support@paynasi.com</p>
-                      <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
+                      <p className="text-sm text-gray-500">We will respond within 24 hours</p>
                     </div>
                   </div>
                   
@@ -459,7 +443,7 @@ const handleSubmit = async (e: SubmitEvent) => {
               Ready to Start Secure Transactions?
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Join thousands of users who trust PayNasi for their secure escrow transactions.
+              Join thousands of users who trust {'PayNasi\'s'} secure escrow transactions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-[#e01c4e] hover:bg-[#c01640] text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors duration-200">

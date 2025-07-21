@@ -26,7 +26,7 @@ const BuyersHowItWorksPage = () => {
   const buyerSteps = [
     {
       id: 1,
-      title: "Agree on Terms",
+      title: " Agree on Terms",
       subtitle: "Negotiate Privately",
       description: "Connect with the seller and agree on product details, price, and delivery terms outside the platform.",
       icon: MessageCircle,
@@ -35,7 +35,7 @@ const BuyersHowItWorksPage = () => {
       details: [
         "Discuss product specifications and condition",
         "Negotiate price and payment terms",
-        "Agree on delivery method and timeline",
+        " Agree on delivery method and timeline",
         "Clarify return/refund policies if needed"
       ],
       tip: "Always verify seller details and ask for product photos before proceeding."
@@ -54,7 +54,7 @@ const BuyersHowItWorksPage = () => {
         "Seller receives payment confirmation",
         "Transaction tracking begins immediately"
       ],
-      tip: "Your money is safe - it won't be released until you confirm satisfaction."
+      tip: "Your money is safe - it won&apos;t be released until you confirm satisfaction."
     },
     {
       id: 3,
@@ -76,7 +76,7 @@ const BuyersHowItWorksPage = () => {
       id: 4,
       title: "Inspect & Confirm",
       subtitle: "Your Protection",
-      description: "Receive and inspect your item. Only release payment when you're completely satisfied with your purchase.",
+      description: "Receive and inspect your item. Only release payment when you&apos;re completely satisfied with your purchase.",
       icon: CheckCircle,
       color: "text-[#17b5a7]",
       bgColor: "bg-[#17b5a7]",
@@ -86,7 +86,7 @@ const BuyersHowItWorksPage = () => {
         "Test functionality if applicable",
         "Confirm satisfaction to release funds"
       ],
-      tip: "Take your time to inspect - you're in control of when payment is released."
+      tip: "Take your time to inspect - you&apos;re in control of when payment is released."
     }
   ];
 
@@ -180,7 +180,7 @@ const BuyersHowItWorksPage = () => {
             </h1>
             
             <p className="text-xl sm:text-2xl text-blue-100 font-medium mb-8 max-w-4xl mx-auto">
-              PayNasi protects every purchase. Pay only when you're satisfied with what you receive.
+              PayNasi protects every purchase. Pay only when you&apos;re satisfied with what you receive.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -196,10 +196,10 @@ const BuyersHowItWorksPage = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => {
+              {stats.map((stat, _) => {
                 const Icon = stat.icon;
                 return (
-                  <div key={index} className="text-center">
+                  <div key={stat.label} className="text-center">
                     <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-lg mb-3">
                       <Icon className="h-6 w-6 text-[#17b5a7]" />
                     </div>

@@ -1,5 +1,3 @@
-// src/app/page.tsx
-import Image from 'next/image';
 import HeroSection from '@/components/Hero';
 import HowItWorksSection from '@/components/HowItWorks';
 import BenefitsSection from '@/components/BenefitsSection';

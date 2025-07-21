@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Plus, Minus, HelpCircle, Shield, CreditCard, Clock, Users, Package, RefreshCw, AlertCircle, Settings } from 'lucide-react';
+import { Plus, Minus, HelpCircle, Shield, CreditCard, Clock, Users, Package,Settings } from 'lucide-react';
 
 const FAQSection = () => {
   const [openFAQ, setOpenFAQ] = useState<string | null>(null);

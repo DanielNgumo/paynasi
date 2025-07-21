@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Shield, CheckCircle, Download, ArrowRight } from 'lucide-react';
+import { Shield, CheckCircle, Download } from 'lucide-react';
 import Link from 'next/link';
 
 const EscrowTrackPage = () => {

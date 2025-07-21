@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, CheckCircle, Download, Play, ArrowRight, Star, Users, CreditCard, Lock } from 'lucide-react';
+import { Shield, CheckCircle, Download, Play,  Star, Users, Lock } from 'lucide-react';
 import Image from "next/image";
 
 

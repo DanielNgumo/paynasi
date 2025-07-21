@@ -11,8 +11,6 @@ import {
   Users, 
   Clock,
   Star,
-  TrendingUp,
-  Lock,
   Eye,
   Smartphone,
   DollarSign
