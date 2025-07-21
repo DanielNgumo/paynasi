@@ -54,7 +54,7 @@ const BuyersHowItWorksPage = () => {
         "Seller receives payment confirmation",
         "Transaction tracking begins immediately"
       ],
-      tip: "Your money is safe - it won't be released until you confirm satisfaction."
+      tip: "Your money is safe - it won&apos;t be released until you confirm satisfaction."
     },
     {
       id: 3,
@@ -180,7 +180,7 @@ const BuyersHowItWorksPage = () => {
             </h1>
             
             <p className="text-xl sm:text-2xl text-blue-100 font-medium mb-8 max-w-4xl mx-auto">
-              {'PayNasi\'s'} secure escrow protects every purchase. Pay only when you are satisfied with what you receive.
+              {'PayNasi&apos;s'} secure escrow protects every purchase. Pay only when you are satisfied with what you receive.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -225,9 +225,9 @@ const BuyersHowItWorksPage = () => {
               Your Journey to Safe
               <span className="text-[#e01c4e]"> Shopping</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Follow these simple steps to shop safely with PayNasi's buyer protection.
-            </p>
+<p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+  Follow these simple steps to shop safely with PayNasi&apos;s buyer protection.
+</p>
           </div>
 
           {/* Desktop Timeline */}
