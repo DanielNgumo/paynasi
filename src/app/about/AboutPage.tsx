@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { 
   Shield, 
@@ -164,15 +166,15 @@ const AboutPage = () => {
             </h1>
             
             <p className="text-xl sm:text-2xl text-blue-100 font-medium mb-8 max-w-4xl mx-auto">
-              We&apos;re on a mission to make online commerce safer, fairer, and more accessible for everyone in Kenya and beyond.
+              We're on a mission to make online commerce safer, fairer, and more accessible for everyone in Kenya and beyond.
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
-              {stats.map((stat, index) => {
+              {stats.map((stat, _) => {
                 const Icon = stat.icon;
                 return (
-                  <div key={index} className="text-center">
+                  <div key={stat.label} className="text-center">
                     <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-lg mb-3">
                       <Icon className="h-6 w-6 text-[#17b5a7]" />
                     </div>
@@ -235,7 +237,7 @@ const AboutPage = () => {
                 <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
               </div>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                To become the leading escrow platform in East Africa, enabling millions of people to trade safely and confidently online. We envision a future where geographical boundaries don&apos;t limit commerce, and trust is built through technology, not just reputation.
+                To become the leading escrow platform in East Africa, enabling millions of people to trade safely and confidently online. We envision a future where geographical boundaries don't limit commerce, and trust is built through technology, not just reputation.
               </p>
               <div className="bg-gradient-to-r from-[#15479e] to-[#17b5a7] rounded-lg p-6 text-white">
                 <div className="flex items-center space-x-2 mb-3">
@@ -263,7 +265,7 @@ const AboutPage = () => {
               What Drives Us Forward
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our values shape every decision we make and every feature we build. They&apos;re the foundation of our commitment to our users.
+              Our values shape every decision we make and every feature we build. They're the foundation of our commitment to our users.
             </p>
           </div>
 
@@ -419,7 +421,7 @@ const AboutPage = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Have questions about PayNasi? Want to partner with us? We&apos;d love to hear from you.
+              Have questions about PayNasi? Want to partner with us? We'd love to hear from you.
             </p>
           </div>
 
