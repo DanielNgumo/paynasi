@@ -212,12 +212,12 @@ const FAQSection = () => {
             <HelpCircle className="h-4 w-4 mr-2" />
             Frequently Asked Questions
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Got Questions?
-            <span className="text-[#e01c4e]"> We've Got Answers</span>
-          </h2>
+<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+  Got Questions?
+  <span className="text-[#e01c4e]"> We&apos;ve Got Answers</span>
+</h2>
           <p className="text-xl text-gray-600">
-            Everything you need to know about PyNasi escrow services
+            Everything you need to know about PayNasi escrow services
           </p>
         </div>
 

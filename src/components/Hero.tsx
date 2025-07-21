@@ -45,10 +45,10 @@ const HeroSection = () => {
             </div>
 
             {/* Description */}
-            <p className="text-lg text-blue-100 leading-relaxed max-w-2xl">
-              PayNasi is a secure mobile escrow platform that protects both buyers and sellers during transactions. 
-              Whether you're purchasing a product or hiring for a service, we ensure payment is only released when everything checks out.
-            </p>
+<p className="text-lg text-blue-100 leading-relaxed max-w-2xl">
+  PayNasi is a secure mobile escrow platform that protects both buyers and sellers during transactions. 
+  Whether you&apos;re purchasing a product or hiring for a service, we ensure payment is only released when everything checks out.
+</p>
 
             {/* Features List */}
             <div className="grid sm:grid-cols-2 gap-4">

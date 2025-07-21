@@ -1,5 +1,5 @@
 "use client";
-
+import Link from 'next/link';
 import React from 'react';
 import { ArrowRight, Shield } from 'lucide-react';
 
@@ -133,14 +133,14 @@ const TermsPage = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-12">
-          <a
+<div className="text-center mt-12">
+          <Link
             href="/"
             className="bg-[#e01c4e] hover:bg-[#c01640] text-white px-8 py-4 rounded-lg font-semibold flex items-center space-x-2 mx-auto transition-colors duration-200 shadow-lg inline-flex"
           >
             <span>Back to Home</span>
             <ArrowRight className="h-5 w-5" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -44,7 +44,7 @@ const BuyersHowItWorksPage = () => {
       id: 2,
       title: "Deposit Payment Securely",
       subtitle: "MPESA to Escrow",
-      description: "Pay the agreed amount via MPESA into PayNasi's secure escrow account. Your money is protected until delivery.",
+      description: "Pay the agreed amount via MPESA into PayNasi&apos;s secure escrow account. Your money is protected until delivery.",
       icon: CreditCard,
       color: "text-[#e01c4e]",
       bgColor: "bg-[#e01c4e]",

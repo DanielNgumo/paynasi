@@ -144,10 +144,10 @@ const ContactPage = () => {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <div className="text-center text-white">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
-              <Headphones className="h-4 w-4 mr-2 text-[#17b5a7]" />
-              We're Here to Help
-            </div>
+ <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
+  <Headphones className="h-4 w-4 mr-2 text-[#17b5a7]" />
+  We&apos;re Here to Help
+</div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Get in <span className="text-[#17b5a7]">Touch</span>

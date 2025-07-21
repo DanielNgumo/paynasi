@@ -170,20 +170,20 @@ const AboutPage = () => {
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
-              {stats.map((stat, _) => {
-                const Icon = stat.icon;
-                return (
-                  <div key={stat.label} className="text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-lg mb-3">
-                      <Icon className="h-6 w-6 text-[#17b5a7]" />
-                    </div>
-                    <div className="text-3xl font-bold text-white">{stat.number}</div>
-                    <div className="text-blue-100 text-sm">{stat.label}</div>
-                  </div>
-                );
-              })}
-            </div>
+<div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+  {stats.map((stat) => {
+    const Icon = stat.icon;
+    return (
+      <div key={stat.label} className="text-center">
+        <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-lg mb-3">
+          <Icon className="h-6 w-6 text-[#17b5a7]" />
+        </div>
+        <div className="text-3xl font-bold text-white">{stat.number}</div>
+        <div className="text-blue-100 text-sm">{stat.label}</div>
+      </div>
+    );
+  })}
+</div>
           </div>
         </div>
       </section>
