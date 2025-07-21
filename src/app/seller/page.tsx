@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Shield, CheckCircle, Download, ArrowRight } from 'lucide-react';
-import Link from 'next.js/link';
+import Link from 'next/link';
 
 const SellerPage = () => {
   return (
