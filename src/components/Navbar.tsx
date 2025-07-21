@@ -1,4 +1,3 @@
-// components/Navbar.tsx
 "use client";
 
 import Image from 'next/image';
@@ -27,11 +26,12 @@ const Navbar = () => {
 
   return (
     <nav className={`
-      sticky top-0 z-50 transition-all duration-500 ease-out
+      fixed top-0 left-0 right-0 w-full transition-all duration-500 ease-out
       ${scrolled 
         ? 'bg-white/95 backdrop-blur-md shadow-2xl transform-gpu' 
         : 'bg-white shadow-md'
       }
+      z-[9999]
     `}>
       <div className={`
         max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-500
@@ -94,8 +94,8 @@ const Navbar = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-[#15479e] to-[#17b5a7] opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm rounded-lg"></div>
                 </button>
                 
-                {/* Enhanced Mega Dropdown with 3D effect */}
-                <div className="absolute left-0 mt-2 w-[600px] bg-white/95 backdrop-blur-md rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 z-10 border border-gray-100 transform perspective-1000 rotateX-5 group-hover:rotateX-0">
+                {/* Enhanced Mega Dropdown with 3D effect and higher z-index */}
+                <div className="absolute left-0 mt-2 w-[600px] bg-white/95 backdrop-blur-md rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 z-[10000] border border-gray-100 transform perspective-1000 rotateX-5 group-hover:rotateX-0">
                   <div className="p-6">
                     <div className="grid grid-cols-3 gap-6">
                       
@@ -267,48 +267,55 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Enhanced Mobile Navigation */}
+      {/* Enhanced Mobile Navigation with higher z-index */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg">
+        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg z-[10000]">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link
               href="/"
+              onClick={toggleMenu}
               className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:scale-105 hover:translate-x-2"
             >
               Home
             </Link>
             <Link
               href="/about"
+              onClick={toggleMenu}
               className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:scale-105 hover:translate-x-2"
             >
               About
             </Link>
             <Link
               href="/buyer"
+              onClick={toggleMenu}
               className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:scale-105 hover:translate-x-2"
             >
               For Buyers
             </Link>
             <Link
               href="/seller"
+              onClick={toggleMenu}
               className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:scale-105 hover:translate-x-2"
             >
               For Sellers
             </Link>
             <Link
               href="/escrow"
+              onClick={toggleMenu}
               className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:scale-105 hover:translate-x-2"
             >
               Escrow Process
             </Link>
             <Link
               href="/contact"
+              onClick={toggleMenu}
               className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:scale-105 hover:translate-x-2"
             >
               Contact
             </Link>
             <Link
               href="/terms"
+              onClick={toggleMenu}
               className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-[#e01c4e] hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:scale-105 hover:translate-x-2"
             >
               Terms

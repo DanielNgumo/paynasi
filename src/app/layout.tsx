@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import '../styles/globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -14,9 +14,48 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // Match weights used in Navbar
+});
+
 export const metadata: Metadata = {
   title: "PayNasi",
   description: "A platform for secure transactions",
+  icons: {
+    icon: [
+      {
+        url: '/logo.ico',
+        sizes: 'any',
+      },
+      {
+        url: '/logo.ico',
+        sizes: '16x16',
+        type: 'image/x-icon',
+      },
+      {
+        url: '/logo.ico',
+        sizes: '32x32',
+        type: 'image/x-icon',
+      },
+    ],
+    shortcut: '/logo.ico',
+    apple: '/logo.ico', // For iOS devices
+  },
+  // Optional: Add more metadata for better SEO
+  metadataBase: new URL('https://paynasi.com'), // Replace with your actual domain
+  openGraph: {
+    title: 'PayNasi',
+    description: 'A platform for secure transactions',
+    images: ['/images/logo.jpg'], // Use your logo for social sharing
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PayNasi',
+    description: 'A platform for secure transactions',
+    images: ['/images/logo.jpg'],
+  },
 };
 
 export default function RootLayout({
@@ -27,9 +66,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
       >
-        <Navbar />
+        <div className="font-inter">
+          <Navbar />
+        </div>
         {children}
         <Footer />
       </body>
