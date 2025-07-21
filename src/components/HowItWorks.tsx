@@ -218,12 +218,12 @@ const HowItWorksSection = () => {
                 </div>
                 <p className="text-gray-600 mb-6 leading-relaxed">{steps[activeStep].description}</p>
                 <div className="space-y-3">
-                  {steps[activeStep].details.map((detail, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-[#17b5a7] flex-shrink-0" />
-                      <span className="text-gray-700">{detail}</span>
-                    </div>
-                  ))}
+  {steps[activeStep].details.map((detail, _index) => (
+  <div key={_index} className="flex items-center space-x-3">
+    <CheckCircle className="h-5 w-5 text-[#17b5a7] flex-shrink-0" />
+    <span className="text-gray-700">{detail}</span>
+  </div>
+))}
                 </div>
               </div>
               <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 h-64 flex items-center justify-center">
