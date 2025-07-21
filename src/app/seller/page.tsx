@@ -2,12 +2,12 @@
 
 import React from 'react';
 import { Shield, CheckCircle, Download, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import Link from 'next.js/link';
 
 const SellerPage = () => {
   return (
     <section className="relative bg-gradient-to-br from-[#15479e] via-[#1e5bb8] to-[#17b5a7] overflow-hidden">
-      {/* BackgroundboruBackground Pattern */}
+      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <defs>
