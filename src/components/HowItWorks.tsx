@@ -179,7 +179,7 @@ const HowItWorksSection = () => {
 
           {/* Mobile Steps */}
           <div className="lg:hidden space-y-8">
-            {steps.map((step, index) => {
+            {steps.map((step) => {
               const Icon = step.icon;
               return (
                 <div key={step.id} className="flex items-start space-x-4">
