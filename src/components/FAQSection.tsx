@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Plus, Minus, HelpCircle, Shield, CreditCard, Clock, Users, Package,Settings } from 'lucide-react';
+import { Plus, Minus, HelpCircle, Shield, CreditCard, Clock, Users, Package, Settings } from 'lucide-react';
 
 const FAQSection = () => {
   const [openFAQ, setOpenFAQ] = useState<string | null>(null);
@@ -37,7 +37,7 @@ const FAQSection = () => {
     },
     {
       id: 'buyers',
-      title: 'For Buyers',
+      title: 'Buyers',
       icon: Users,
       faqs: [
         {
@@ -69,7 +69,7 @@ const FAQSection = () => {
     },
     {
       id: 'sellers',
-      title: 'For Sellers',
+      title: 'Sellers',
       icon: Package,
       faqs: [
         {
@@ -204,46 +204,47 @@ const FAQSection = () => {
   const currentCategory = faqCategories.find(cat => cat.id === activeCategory);
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-[#15479e]/10 text-[#15479e] px-4 py-2 rounded-full text-sm font-semibold mb-6">
-            <HelpCircle className="h-4 w-4 mr-2" />
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center bg-[#15479e]/10 text-[#15479e] px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
+            <HelpCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
             Frequently Asked Questions
           </div>
-<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-  Got Questions?
-  <span className="text-[#e01c4e]"> We&apos;ve Got Answers</span>
-</h2>
-          <p className="text-xl text-gray-600">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
+            Got Questions?
+            <span className="text-[#e01c4e]"> We&apos;ve Got Answers</span>
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 px-2">
             Everything you need to know about PayNasi escrow services
           </p>
         </div>
 
         {/* Category Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-2">
           {faqCategories.map((category) => {
             const Icon = category.icon;
             return (
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`inline-flex items-center px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                className={`inline-flex items-center px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg font-medium transition-all duration-200 text-xs sm:text-sm ${
                   activeCategory === category.id
                     ? 'bg-[#15479e] text-white shadow-lg'
                     : 'bg-white text-gray-600 hover:bg-gray-100 hover:text-[#15479e]'
                 }`}
               >
-                <Icon className="h-4 w-4 mr-2" />
-                {category.title}
+                <Icon className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                <span className="hidden sm:inline">{category.title}</span>
+                <span className="sm:hidden">{category.title.split(' ')[0]}</span>
               </button>
             );
           })}
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {currentCategory?.faqs.map((faq) => {
             const isOpen = openFAQ === faq.id;
             
@@ -254,22 +255,22 @@ const FAQSection = () => {
               >
                 <button
                   onClick={() => toggleFAQ(faq.id)}
-                  className="w-full px-6 py-6 text-left focus:outline-none focus:ring-2 focus:ring-[#15479e]/20"
+                  className="w-full px-4 sm:px-6 py-4 sm:py-6 text-left focus:outline-none focus:ring-2 focus:ring-[#15479e]/20"
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-10 h-10 bg-[#15479e]/10 rounded-lg flex items-center justify-center">
-                        <currentCategory.icon className="h-5 w-5 text-[#15479e]" />
+                  <div className="flex items-start sm:items-center justify-between">
+                    <div className="flex items-start sm:items-center space-x-3 sm:space-x-4 flex-1 min-w-0">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#15479e]/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1 sm:mt-0">
+                        <currentCategory.icon className="h-4 w-4 sm:h-5 sm:w-5 text-[#15479e]" />
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                      <h3 className="text-sm sm:text-lg font-semibold text-gray-900 pr-2 sm:pr-4 leading-snug sm:leading-normal">
                         {faq.question}
                       </h3>
                     </div>
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 mt-1 sm:mt-0">
                       {isOpen ? (
-                        <Minus className="h-5 w-5 text-[#e01c4e]" />
+                        <Minus className="h-4 w-4 sm:h-5 sm:w-5 text-[#e01c4e]" />
                       ) : (
-                        <Plus className="h-5 w-5 text-[#15479e]" />
+                        <Plus className="h-4 w-4 sm:h-5 sm:w-5 text-[#15479e]" />
                       )}
                     </div>
                   </div>
@@ -280,9 +281,9 @@ const FAQSection = () => {
                     isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="px-6 pb-6">
-                    <div className="ml-14">
-                      <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                    <div className="ml-11 sm:ml-14">
+                      <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{faq.answer}</p>
                     </div>
                   </div>
                 </div>
@@ -292,38 +293,38 @@ const FAQSection = () => {
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 mb-12">
-          <div className="bg-white rounded-xl p-6 shadow-md text-center">
-            <div className="w-12 h-12 bg-[#15479e]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <Clock className="h-6 w-6 text-[#15479e]" />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-12 sm:mt-16 mb-8 sm:mb-12">
+          <div className="bg-white rounded-xl p-4 sm:p-6 shadow-md text-center">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#15479e]/10 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <Clock className="h-5 w-5 sm:h-6 sm:w-6 text-[#15479e]" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">1 Hour Inspection</h3>
-            <p className="text-gray-600">Full inspection window for all physical goods</p>
+            <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">1 Hour Inspection</h3>
+            <p className="text-gray-600 text-sm sm:text-base">Full inspection window for all physical goods</p>
           </div>
-          <div className="bg-white rounded-xl p-6 shadow-md text-center">
-            <div className="w-12 h-12 bg-[#e01c4e]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <CreditCard className="h-6 w-6 text-[#e01c4e]" />
+          <div className="bg-white rounded-xl p-4 sm:p-6 shadow-md text-center">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#e01c4e]/10 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <CreditCard className="h-5 w-5 sm:h-6 sm:w-6 text-[#e01c4e]" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">3% Fee</h3>
-            <p className="text-gray-600">Simple, transparent pricing for buyers</p>
+            <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">3% Fee</h3>
+            <p className="text-gray-600 text-sm sm:text-base">Simple, transparent pricing for buyers</p>
           </div>
-          <div className="bg-white rounded-xl p-6 shadow-md text-center">
-            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <Shield className="h-6 w-6 text-green-600" />
+          <div className="bg-white rounded-xl p-4 sm:p-6 shadow-md text-center sm:col-span-1 col-span-1">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">100% Secure</h3>
-            <p className="text-gray-600">Bank-grade encryption and verification</p>
+            <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">100% Secure</h3>
+            <p className="text-gray-600 text-sm sm:text-base">Bank-grade encryption and verification</p>
           </div>
         </div>
 
         {/* CTA */}
         <div className="text-center">
-          <p className="text-gray-600 mb-4">Still have questions?</p>
+          <p className="text-gray-600 mb-4 text-sm sm:text-base">Still have questions?</p>
           <a
             href="mailto:support@paynasi.com"
-            className="inline-flex items-center bg-[#15479e] hover:bg-[#0f3a7a] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+            className="inline-flex items-center bg-[#15479e] hover:bg-[#0f3a7a] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold transition-colors duration-200 text-sm sm:text-base"
           >
-            <HelpCircle className="h-5 w-5 mr-2" />
+            <HelpCircle className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
             Contact Support
           </a>
         </div>

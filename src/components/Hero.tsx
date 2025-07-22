@@ -1,11 +1,10 @@
 import React from 'react';
-import { Shield, CheckCircle, Download, Play,  Star, Users, Lock } from 'lucide-react';
+import { Shield, CheckCircle, Download, Play, Star, Users, Lock } from 'lucide-react';
 import Image from "next/image";
-
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-gradient-to-br from-[#15479e] via-[#1e5bb8] to-[#17b5a7] overflow-hidden">
+    <section className="relative bg-gradient-to-br from-[#15479e] via-[#1e5bb8] to-[#17b5a7] overflow-hidden min-h-screen">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -18,171 +17,166 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-16 h-16 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute top-40 right-20 w-24 h-24 bg-[#e01c4e]/20 rounded-full blur-xl animate-pulse delay-1000"></div>
-      <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-[#17b5a7]/20 rounded-full blur-xl animate-pulse delay-2000"></div>
+      {/* Floating Elements - Hidden on mobile, visible on larger screens */}
+      <div className="hidden md:block absolute top-20 left-10 w-16 h-16 bg-white/10 rounded-full blur-xl animate-pulse"></div>
+      <div className="hidden lg:block absolute top-40 right-20 w-24 h-24 bg-[#e01c4e]/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+      <div className="hidden md:block absolute bottom-20 left-1/4 w-20 h-20 bg-[#17b5a7]/20 rounded-full blur-xl animate-pulse delay-2000"></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-18 sm:py-16 lg:py-20 xl:py-32">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Column - Content */}
-          <div className="text-white space-y-8">
+          <div className="text-white space-y-6 md:space-y-8 order-2 lg:order-1">
             {/* Badge */}
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-              <Shield className="h-4 w-4 mr-2 text-[#17b5a7]" />
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 sm:px-4 text-xs sm:text-sm font-medium">
+              <Shield className="h-3 w-3 sm:h-4 sm:w-4 mr-2 text-[#17b5a7]" />
               Secure Escrow Platform
             </div>
 
             {/* Main Heading */}
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            <div className="space-y-3 md:space-y-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                 Trust. Transact.{' '}
-                <span className="text-[#17b5a7]">Track.</span>
+                <span className="text-[#17b5a7] block sm:inline">Track.</span>
               </h1>
-              <p className="text-xl sm:text-2xl text-blue-100 font-medium">
+              <p className="text-lg sm:text-xl md:text-2xl text-blue-100 font-medium leading-relaxed">
                 Your money moves safely, fairly, and only when it should.
               </p>
             </div>
 
             {/* Description */}
-<p className="text-lg text-blue-100 leading-relaxed max-w-2xl">
-  PayNasi is a secure mobile escrow platform that protects both buyers and sellers during transactions. 
-  Whether you&apos;re purchasing a product or hiring for a service, we ensure payment is only released when everything checks out.
-</p>
+            <p className="text-base sm:text-lg text-blue-100 leading-relaxed max-w-2xl">
+              PayNasi is a secure mobile escrow platform that protects both buyers and sellers during transactions. 
+              Whether you&apos;re purchasing a product or hiring for a service, we ensure payment is only released when everything checks out.
+            </p>
 
             {/* Features List */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
               <div className="flex items-center space-x-3">
-                <CheckCircle className="h-5 w-5 text-[#17b5a7] flex-shrink-0" />
-                <span className="text-blue-100">No risk. No scams.</span>
+                <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#17b5a7] flex-shrink-0" />
+                <span className="text-blue-100 text-sm sm:text-base">No risk. No scams.</span>
               </div>
               <div className="flex items-center space-x-3">
-                <CheckCircle className="h-5 w-5 text-[#17b5a7] flex-shrink-0" />
-                <span className="text-blue-100">Inspect before you pay</span>
+                <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#17b5a7] flex-shrink-0" />
+                <span className="text-blue-100 text-sm sm:text-base">Inspect before you pay</span>
               </div>
               <div className="flex items-center space-x-3">
-                <CheckCircle className="h-5 w-5 text-[#17b5a7] flex-shrink-0" />
-                <span className="text-blue-100">Verify payment before you Send goods.</span>
+                <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#17b5a7] flex-shrink-0" />
+                <span className="text-blue-100 text-sm sm:text-base">Verify payment before you Send goods.</span>
               </div>
               <div className="flex items-center space-x-3">
-                <CheckCircle className="h-5 w-5 text-[#17b5a7] flex-shrink-0" />
-                <span className="text-blue-100">Total transactions protection</span>
+                <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#17b5a7] flex-shrink-0" />
+                <span className="text-blue-100 text-sm sm:text-base">Total transactions protection</span>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="bg-[#e01c4e] hover:bg-[#c01640] text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-all duration-200 transform hover:scale-105 shadow-lg">
-                <Download className="h-5 w-5" />
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
+              <button className="bg-[#e01c4e] hover:bg-[#c01640] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-all duration-200 transform hover:scale-105 shadow-lg text-sm sm:text-base">
+                <Download className="h-4 w-4 sm:h-5 sm:w-5" />
                 <span>Download on Google Play</span>
               </button>
-              <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-all duration-200 border border-white/20">
-                <Play className="h-5 w-5" />
+              <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-all duration-200 border border-white/20 text-sm sm:text-base">
+                <Play className="h-4 w-4 sm:h-5 sm:w-5" />
                 <span>Watch Demo</span>
               </button>
             </div>
 
             {/* Social Proof */}
-            <div className="flex items-center space-x-6 pt-6 border-t border-white/20">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-3 sm:space-y-0 pt-6 border-t border-white/20">
               <div className="flex items-center space-x-2">
                 <div className="flex -space-x-2">
-                  <div className="w-8 h-8 bg-[#17b5a7] rounded-full border-2 border-white"></div>
-                  <div className="w-8 h-8 bg-[#e01c4e] rounded-full border-2 border-white"></div>
-                  <div className="w-8 h-8 bg-yellow-400 rounded-full border-2 border-white"></div>
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#17b5a7] rounded-full border-2 border-white"></div>
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#e01c4e] rounded-full border-2 border-white"></div>
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400 rounded-full border-2 border-white"></div>
                 </div>
-                <span className="text-sm text-blue-100">1000+ users</span>
+                <span className="text-xs sm:text-sm text-blue-100">1000+ users</span>
               </div>
               <div className="flex items-center space-x-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                  <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400 fill-current" />
                 ))}
-                <span className="text-sm text-blue-100 ml-2">4.9 rating</span>
+                <span className="text-xs sm:text-sm text-blue-100 ml-2">4.9 rating</span>
               </div>
             </div>
           </div>
 
           {/* Right Column - Visual */}
-          <div className="relative">
+          <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
             {/* Phone Mockup */}
-            <div className="relative mx-auto w-80 h-96 bg-gradient-to-b from-gray-800 to-gray-900 rounded-3xl shadow-2xl">
+            <div className="relative w-64 h-80 sm:w-72 sm:h-88 md:w-80 md:h-96 lg:w-72 lg:h-88 xl:w-80 xl:h-96 bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl sm:rounded-3xl shadow-2xl">
               {/* Phone Screen */}
-              <div className="absolute top-4 left-4 right-4 bottom-4 bg-white rounded-2xl overflow-hidden">
+              <div className="absolute top-3 left-3 right-3 bottom-3 sm:top-4 sm:left-4 sm:right-4 sm:bottom-4 bg-white rounded-xl sm:rounded-2xl overflow-hidden">
                 {/* App Interface */}
-                <div className="h-full bg-gradient-to-b from-blue-50 to-white p-6">
+                <div className="h-full bg-gradient-to-b from-blue-50 to-white p-4 sm:p-6">
                   {/* Header */}
-                  <div className="flex items-center justify-between mb-6">
-                    {/* <div className="flex items-center space-x-2">
-                      <Shield className="h-6 w-6 text-[#e01c4e]" />
-                      <span className="font-bold text-[#15479e]">PayNasi</span>
-                    </div> */}
+                  <div className="flex items-center justify-between mb-4 sm:mb-6">
                     <div className="flex items-center space-x-2">
-  {/* Real logo */}
-  <Image
-    src="/images/logo.jpg"      /* file lives in /public/images/ */
-    alt="PayNasi logo"
-    width={24}                  /* tweak sizes as needed */
-    height={24}
-    className="h-6 w-6 object-contain"
-    priority                    /* optional: pre‑loads above‑the‑fold */
-  />
-  <span className="font-bold text-[#15479e]">PayNasi</span>
-</div>
-
-                    <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
+                      {/* Real logo */}
+                      <Image
+                        src="/images/logo.jpg"
+                        alt="PayNasi logo"
+                        width={20}
+                        height={20}
+                        className="h-5 w-5 sm:h-6 sm:w-6 object-contain"
+                        priority
+                      />
+                      <span className="font-bold text-[#15479e] text-sm sm:text-base">PayNasi</span>
+                    </div>
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 rounded-full"></div>
                   </div>
                   
                   {/* Transaction Card */}
-                  <div className="bg-white rounded-xl shadow-md p-4 mb-4">
+                  <div className="bg-white rounded-xl shadow-md p-3 sm:p-4 mb-3 sm:mb-4">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-600">Transaction</span>
+                      <span className="text-xs sm:text-sm font-medium text-gray-600">Transaction</span>
                       <span className="text-xs bg-[#17b5a7]/20 text-[#17b5a7] px-2 py-1 rounded-full">In Progress</span>
                     </div>
-                    <div className="text-lg font-bold text-[#15479e] mb-1">KSH 15,000</div>
-                    <div className="text-sm text-gray-500">iPhone 13 Pro</div>
+                    <div className="text-base sm:text-lg font-bold text-[#15479e] mb-1">KSH 15,000</div>
+                    <div className="text-xs sm:text-sm text-gray-500">iPhone 13 Pro</div>
                   </div>
 
                   {/* Steps */}
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     <div className="flex items-center space-x-3">
-                      <div className="w-6 h-6 bg-[#17b5a7] rounded-full flex items-center justify-center">
-                        <CheckCircle className="h-4 w-4 text-white" />
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-[#17b5a7] rounded-full flex items-center justify-center">
+                        <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
                       </div>
-                      <span className="text-sm text-gray-700">Payment deposited</span>
+                      <span className="text-xs sm:text-sm text-gray-700">Payment deposited</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <div className="w-6 h-6 bg-[#17b5a7] rounded-full flex items-center justify-center">
-                        <CheckCircle className="h-4 w-4 text-white" />
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-[#17b5a7] rounded-full flex items-center justify-center">
+                        <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
                       </div>
-                      <span className="text-sm text-gray-700">Seller confirmed</span>
+                      <span className="text-xs sm:text-sm text-gray-700">Seller confirmed</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <div className="w-6 h-6 bg-blue-200 rounded-full flex items-center justify-center">
-                        <div className="w-2 h-2 bg-[#15479e] rounded-full"></div>
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-blue-200 rounded-full flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#15479e] rounded-full"></div>
                       </div>
-                      <span className="text-sm text-gray-700">Awaiting delivery</span>
+                      <span className="text-xs sm:text-sm text-gray-700">Awaiting delivery</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Floating Cards */}
-            <div className="absolute -top-8 -left-8 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-xl">
-              <div className="flex items-center space-x-3">
-                <Lock className="h-8 w-8 text-[#17b5a7]" />
+            {/* Floating Cards - Hidden on mobile */}
+            <div className="hidden md:block absolute -top-6 -left-6 lg:-top-8 lg:-left-8 bg-white/90 backdrop-blur-sm rounded-xl p-3 lg:p-4 shadow-xl">
+              <div className="flex items-center space-x-2 lg:space-x-3">
+                <Lock className="h-6 w-6 lg:h-8 lg:w-8 text-[#17b5a7]" />
                 <div>
-                  <div className="font-semibold text-[#15479e]">Secure</div>
-                  <div className="text-sm text-gray-600">Bank-level security</div>
+                  <div className="font-semibold text-[#15479e] text-sm lg:text-base">Secure</div>
+                  <div className="text-xs lg:text-sm text-gray-600">Bank-level security</div>
                 </div>
               </div>
             </div>
 
-            <div className="absolute -bottom-8 -right-8 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-xl">
-              <div className="flex items-center space-x-3">
-                <Users className="h-8 w-8 text-[#e01c4e]" />
+            <div className="hidden md:block absolute -bottom-6 -right-6 lg:-bottom-8 lg:-right-8 bg-white/90 backdrop-blur-sm rounded-xl p-3 lg:p-4 shadow-xl">
+              <div className="flex items-center space-x-2 lg:space-x-3">
+                <Users className="h-6 w-6 lg:h-8 lg:w-8 text-[#e01c4e]" />
                 <div>
-                  <div className="font-semibold text-[#15479e]">Trusted</div>
-                  <div className="text-sm text-gray-600">1000+ users</div>
+                  <div className="font-semibold text-[#15479e] text-sm lg:text-base">Trusted</div>
+                  <div className="text-xs lg:text-sm text-gray-600">1000+ users</div>
                 </div>
               </div>
             </div>
@@ -192,7 +186,7 @@ const HeroSection = () => {
 
       {/* Bottom Wave */}
       <div className="absolute bottom-0 left-0 w-full">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-16">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 sm:h-16">
           <path d="M0,0V46.29C47.79,22.8,103.59,32.5,158,28,209.58,23.82,278.92,24.48,331,28c63.08,4.21,121.4,10.17,174,28,51.6,17.4,98.8,47.5,158,48,59.2,0.5,119.8-29.4,174-48,51.6-17.7,98.4-10.1,158-28,46.8-14.1,87.2-40.8,131-48V0Z" fill="white"></path>
         </svg>
       </div>

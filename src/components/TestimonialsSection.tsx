@@ -5,6 +5,7 @@ import { Star, Quote, ChevronLeft, ChevronRight, Shield, Heart } from 'lucide-re
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const testimonials = [
     {
@@ -69,6 +70,17 @@ const TestimonialsSection = () => {
     }
   ];
 
+  // Check screen size on mount and resize
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   }, [testimonials.length]);
@@ -84,79 +96,98 @@ const TestimonialsSection = () => {
 
   const getVisibleTestimonials = () => {
     const visible = [];
-    for (let i = 0; i < 3; i++) {
+    const itemsToShow = isMobile ? 1 : 3;
+    
+    for (let i = 0; i < itemsToShow; i++) {
       visible.push(testimonials[(currentIndex + i) % testimonials.length]);
     }
     return visible;
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-[#e01c4e]/10 text-[#e01c4e] px-4 py-2 rounded-full text-sm font-semibold mb-6">
-            <Heart className="h-4 w-4 mr-2" />
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center bg-[#e01c4e]/10 text-[#e01c4e] px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
+            <Heart className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
             What Our Users Say
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
             Trusted by
             <span className="text-[#17b5a7]"> Thousands</span>
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-lg sm:text-xl text-gray-600">
             Real stories from real users
           </p>
         </div>
 
         {/* Testimonials Carousel */}
         <div className="relative">
-          {/* Navigation Buttons */}
+          {/* Navigation Buttons - Hidden on mobile */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors duration-200"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-gray-50 transition-colors duration-200 hidden md:flex"
           >
-            <ChevronLeft className="h-6 w-6 text-gray-600" />
+            <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors duration-200"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-gray-50 transition-colors duration-200 hidden md:flex"
           >
-            <ChevronRight className="h-6 w-6 text-gray-600" />
+            <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
           </button>
 
+          {/* Mobile Navigation Buttons */}
+          <div className="flex justify-between mb-4 md:hidden">
+            <button
+              onClick={prevSlide}
+              className="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors duration-200"
+            >
+              <ChevronLeft className="h-5 w-5 text-gray-600" />
+            </button>
+            
+            <button
+              onClick={nextSlide}
+              className="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors duration-200"
+            >
+              <ChevronRight className="h-5 w-5 text-gray-600" />
+            </button>
+          </div>
+
           {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {getVisibleTestimonials().map((testimonial) => (
               <div
                 key={testimonial.id}
-                className="bg-gray-50 rounded-2xl p-6 relative transition-all duration-500 hover:shadow-lg hover:bg-white"
+                className="bg-gray-50 rounded-2xl p-4 sm:p-6 relative transition-all duration-500 hover:shadow-lg hover:bg-white"
               >
                 {/* Quote Icon */}
-                <div className="absolute -top-3 -left-3 w-8 h-8 bg-[#15479e] rounded-full flex items-center justify-center">
-                  <Quote className="h-4 w-4 text-white" />
+                <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 w-6 h-6 sm:w-8 sm:h-8 bg-[#15479e] rounded-full flex items-center justify-center">
+                  <Quote className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
                 </div>
 
                 {/* Rating */}
-                <div className="flex items-center mb-4">
+                <div className="flex items-center mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                    <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400 fill-current" />
                   ))}
                 </div>
 
                 {/* Testimonial Text */}
-                <p className="text-gray-700 mb-6 leading-relaxed">
+                <p className="text-gray-700 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
 
                 {/* User Info */}
                 <div className="flex items-center space-x-3">
-                  <div className={`w-12 h-12 ${testimonial.avatar} rounded-full flex items-center justify-center text-white font-semibold`}>
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 ${testimonial.avatar} rounded-full flex items-center justify-center text-white font-semibold text-sm sm:text-base`}>
                     {testimonial.initial}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-500">{testimonial.role} &bull; {testimonial.location}</p>
+                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base">{testimonial.name}</h4>
+                    <p className="text-xs sm:text-sm text-gray-500">{testimonial.role} &bull; {testimonial.location}</p>
                   </div>
                 </div>
               </div>
@@ -164,7 +195,7 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Indicators */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
@@ -178,30 +209,30 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div className="text-3xl font-bold text-[#15479e] mb-2">4.9</div>
-            <div className="text-gray-600 text-sm">App Rating</div>
+        <div className="mt-12 sm:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
+          <div className="p-4">
+            <div className="text-2xl sm:text-3xl font-bold text-[#15479e] mb-1 sm:mb-2">4.9</div>
+            <div className="text-gray-600 text-xs sm:text-sm">App Rating</div>
           </div>
-          <div>
-            <div className="text-3xl font-bold text-[#17b5a7] mb-2">1,000+</div>
-            <div className="text-gray-600 text-sm">Happy Users</div>
+          <div className="p-4">
+            <div className="text-2xl sm:text-3xl font-bold text-[#17b5a7] mb-1 sm:mb-2">1,000+</div>
+            <div className="text-gray-600 text-xs sm:text-sm">Happy Users</div>
           </div>
-          <div>
-            <div className="text-3xl font-bold text-[#e01c4e] mb-2">5,000+</div>
-            <div className="text-gray-600 text-sm">Safe Transactions</div>
+          <div className="p-4">
+            <div className="text-2xl sm:text-3xl font-bold text-[#e01c4e] mb-1 sm:mb-2">5,000+</div>
+            <div className="text-gray-600 text-xs sm:text-sm">Safe Transactions</div>
           </div>
-          <div>
-            <div className="text-3xl font-bold text-[#15479e] mb-2">99.9%</div>
-            <div className="text-gray-600 text-sm">Success Rate</div>
+          <div className="p-4">
+            <div className="text-2xl sm:text-3xl font-bold text-[#15479e] mb-1 sm:mb-2">99.9%</div>
+            <div className="text-gray-600 text-xs sm:text-sm">Success Rate</div>
           </div>
         </div>
 
         {/* Trust Badge */}
-        <div className="mt-16 bg-gradient-to-r from-[#15479e]/10 to-[#17b5a7]/10 rounded-2xl p-8 text-center">
-          <Shield className="h-12 w-12 text-[#15479e] mx-auto mb-4" />
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">Join the Trust Revolution</h3>
-          <p className="text-gray-600">
+        <div className="mt-12 sm:mt-16 bg-gradient-to-r from-[#15479e]/10 to-[#17b5a7]/10 rounded-2xl p-6 sm:p-8 text-center">
+          <Shield className="h-10 w-10 sm:h-12 sm:w-12 text-[#15479e] mx-auto mb-3 sm:mb-4" />
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Join the Trust Revolution</h3>
+          <p className="text-sm sm:text-base text-gray-600 px-2">
             Be part of Kenya&apos;s most trusted transaction platform
           </p>
         </div>
