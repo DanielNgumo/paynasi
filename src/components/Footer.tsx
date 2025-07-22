@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { 
-  Shield, 
   Mail, 
   Phone, 
   MapPin, 
@@ -15,7 +14,8 @@ import {
   Users,
   CreditCard,
   Lock,
-  Star
+  Star,
+  Shield
 } from 'lucide-react';
 
 const Footer = () => {
@@ -28,7 +28,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <Shield className="h-8 w-8 text-[#e01c4e]" />
+              <img src="/images/logo.jpg" alt="PayNasi Logo" className="h-8 w-8 object-contain" />
               <span className="text-2xl font-bold">PayNasi</span>
             </div>
             <p className="text-blue-100 leading-relaxed">
@@ -141,9 +141,6 @@ const Footer = () => {
             </div>
           </div>
 
-
-
-
           {/* Contact & Download */}
           <div className="space-y-6">
             <h4 className="font-semibold text-white text-lg">Get In Touch</h4>
@@ -165,7 +162,7 @@ const Footer = () => {
                 <div>
                   <p className="text-blue-100">Call Us</p>
                   <a href="tel:+254700000000" className="text-white hover:text-[#17b5a7] transition-colors">
-  +254 700 000 000
+                    +254 700 000 000
                   </a>
                 </div>
               </div>
@@ -210,10 +207,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
-
-
-
         </div>
       </div>
 
