@@ -123,7 +123,6 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-
 <section className="relative bg-gradient-to-br from-[#15479e] via-[#1e5bb8] to-[#17b5a7] overflow-hidden">
   {/* Background Pattern */}
   <div className="absolute inset-0 opacity-10">
@@ -146,7 +145,7 @@ const ContactPage = () => {
     <div className="text-center text-white">
       <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
         <Headphones className="h-3 w-3 sm:h-4 sm:w-4 mr-2 text-[#17b5a7]" />
-        We're Here to Help
+        We are Here to Help
       </div>
       
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 px-2">
@@ -170,7 +169,6 @@ const ContactPage = () => {
     </svg>
   </div>
 </section>
-
       {/* Contact Methods */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
