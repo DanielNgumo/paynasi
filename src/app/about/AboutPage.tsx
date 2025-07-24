@@ -23,6 +23,14 @@ import {
 
 const AboutPage = () => {
   const [activeValue, setActiveValue] = useState(0);
+  const [expandedBios, setExpandedBios] = useState<Record<number, boolean>>({});
+
+  const toggleBio = (index: number) => {
+    setExpandedBios(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
 
   const stats = [
     { number: '1,000+', label: 'Active Users', icon: Users },
@@ -80,31 +88,27 @@ const AboutPage = () => {
 
   const team = [
     {
-      name: 'Sarah Kamau',
-      role: 'CEO & Co-Founder',
+      name: 'Ian Ruthi',
+      role: 'Value Innovator & Product Strategist',
       image: '/api/placeholder/300/300',
-      bio: 'Former fintech executive with 10+ years in digital payments and e-commerce security.',
+      bio: 'A seasoned serial intrapreneur, Ian has spent years turning complex ideas into practical, user-driven solutions across various industries.',
+      fullBio: 'A seasoned serial intrapreneur, Ian has spent years turning complex ideas into practical, user-driven solutions across various industries. With a sharp focus on value innovation and product management, they lead the development of PayNasi\'s core features; ensuring that each solution is both scalable and tailored to local market needs. Ian thrives at the intersection of business strategy, design thinking, and execution, making them the visionary behind the platform\'s product roadmap.',
       linkedin: '#'
     },
     {
-      name: 'Michael Ochieng',
-      role: 'CTO & Co-Founder',
+      name: 'Martin Njuguna',
+      role: 'Marketing Lead & E-commerce Expert',
       image: '/api/placeholder/300/300',
-      bio: 'Tech veteran specializing in secure payment systems and mobile application development.',
+      bio: 'Martin brings deep insights into the African e-commerce landscape, with a proven track record in marketing and customer engagement.',
+      fullBio: 'Martin brings deep insights into the African e-commerce landscape, with a proven track record in marketing and customer engagement. Their understanding of buyer behavior, merchant dynamics, and digital growth strategies is instrumental in driving adoption and building brand trust. With a passion for storytelling and market positioning, Martin ensures that PayNasi not only solves a problem—but also resonates with the people it serves.',
       linkedin: '#'
     },
     {
-      name: 'Grace Wanjiku',
-      role: 'Head of Operations',
+      name: 'Erick Karanja',
+      role: 'Backend Engineer & Payment Systems Architect',
       image: '/api/placeholder/300/300',
-      bio: 'Operations expert focused on customer experience and transaction processing efficiency.',
-      linkedin: '#'
-    },
-    {
-      name: 'David Kiprotich',
-      role: 'Lead Developer',
-      image: '/api/placeholder/300/300',
-      bio: 'Full-stack developer passionate about building secure, scalable financial technology solutions.',
+      bio: 'A skilled computer engineer with a specialty in backend development and payment integration, Erick is the architect behind PayNasi\'s secure infrastructure.',
+      fullBio: 'A skilled computer engineer with a specialty in backend development and payment integration, Erick is the architect behind PayNasi\'s secure and reliable infrastructure. With years of experience building scalable systems and integrating complex APIs, they ensure that every transaction on the platform is fast, traceable, and secure. Eric\'s attention to technical detail and commitment to security is what powers PayNasi\'s promise of safe online transactions.',
       linkedin: '#'
     }
   ];
@@ -134,6 +138,32 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <style>{`
+        .bio-text {
+          transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+          overflow: hidden;
+        }
+        .bio-collapsed {
+          max-height: 4.5rem;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .bio-expanded {
+          max-height: 500px;
+        }
+        .fade-gradient {
+          background: linear-gradient(transparent, white);
+          height: 1rem;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          pointer-events: none;
+        }
+      `}</style>
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#15479e] via-[#1e5bb8] to-[#17b5a7] py-16 sm:py-20 lg:py-32 overflow-hidden">
         {/* Background Pattern */}
@@ -396,14 +426,14 @@ const AboutPage = () => {
               Meet Our Team
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
-              The People Behind PayNasi
+              Meet the Founders Behind PayNasi 
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
-              Our diverse team of experts is passionate about building secure, accessible financial technology that serves everyone.
+              At the heart of PayNasi is a dynamic team of founders driven by a shared vision: to build trust and simplify commerce across Africa through secure, tech-enabled escrow solutions. Together, they combine technical depth, market intelligence, and product vision; setting a new standard for trust and transparency in African digital commerce.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {team.map((member, index) => (
               <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 <div className="h-40 sm:h-48 bg-gradient-to-br from-[#15479e] to-[#17b5a7] flex items-center justify-center">
@@ -414,7 +444,42 @@ const AboutPage = () => {
                 <div className="p-4 sm:p-6">
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
                   <p className="text-[#e01c4e] font-medium mb-3 text-sm sm:text-base">{member.role}</p>
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">{member.bio}</p>
+                  
+                  <div className="relative mb-4">
+                    <div className={`bio-text text-gray-600 text-xs sm:text-sm leading-relaxed ${
+                      expandedBios[index] ? 'bio-expanded' : 'bio-collapsed'
+                    }`}>
+                      {expandedBios[index] ? member.fullBio : member.bio}
+                    </div>
+                    
+                    {!expandedBios[index] && member.fullBio.length > member.bio.length && (
+                      <div className="fade-gradient"></div>
+                    )}
+                    
+                    {member.fullBio.length > member.bio.length && (
+                      <button
+                        onClick={() => toggleBio(index)}
+                        className="text-[#17b5a7] hover:text-[#15479e] transition-colors text-xs sm:text-sm font-medium mt-2 flex items-center group"
+                      >
+                        {expandedBios[index] ? (
+                          <>
+                            Show Less
+                            <svg className="w-3 h-3 ml-1 transform rotate-180 group-hover:translate-y-0.5 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                          </>
+                        ) : (
+                          <>
+                            Read More
+                            <svg className="w-3 h-3 ml-1 group-hover:translate-y-0.5 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                  
                   <a 
                     href={member.linkedin} 
                     className="inline-flex items-center text-[#15479e] hover:text-[#17b5a7] transition-colors text-sm"
