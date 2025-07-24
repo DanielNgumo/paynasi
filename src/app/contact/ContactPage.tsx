@@ -123,52 +123,53 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#15479e] via-[#1e5bb8] to-[#17b5a7] overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="100" height="100" fill="url(#grid)" />
-          </svg>
-        </div>
 
-        {/* Floating Elements - Hidden on mobile for performance */}
-        <div className="hidden md:block absolute top-20 left-10 w-16 h-16 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="hidden md:block absolute top-40 right-20 w-24 h-24 bg-[#e01c4e]/20 rounded-full blur-xl animate-pulse delay-1000"></div>
-        <div className="hidden md:block absolute bottom-20 left-1/4 w-20 h-20 bg-[#17b5a7]/20 rounded-full blur-xl animate-pulse delay-2000"></div>
+<section className="relative bg-gradient-to-br from-[#15479e] via-[#1e5bb8] to-[#17b5a7] overflow-hidden">
+  {/* Background Pattern */}
+  <div className="absolute inset-0 opacity-10">
+    <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100" height="100" fill="url(#grid)" />
+    </svg>
+  </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24">
-          <div className="text-center text-white">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              <Headphones className="h-3 w-3 sm:h-4 sm:w-4 mr-2 text-[#17b5a7]" />
-              We're Here to Help
-            </div>
-            
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 px-2">
-              Get in <span className="text-[#17b5a7]">Touch</span>
-            </h1>
-            
-            <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 font-medium mb-3 sm:mb-4 px-4">
-              Questions? Feedback? We would love to hear from you.
-            </p>
-            
-            <p className="text-base sm:text-lg text-blue-100 leading-relaxed max-w-2xl mx-auto px-4">
-              Our dedicated support team is here to help you with any questions about the PayNasi secure escrow platform. Reach out anytime!
-            </p>
-          </div>
-        </div>
+  {/* Floating Elements - Hidden on mobile for performance */}
+  <div className="hidden md:block absolute top-20 left-10 w-16 h-16 bg-white/10 rounded-full blur-xl animate-pulse"></div>
+  <div className="hidden md:block absolute top-40 right-20 w-24 h-24 bg-[#e01c4e]/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+  <div className="hidden md:block absolute bottom-20 left-1/4 w-20 h-20 bg-[#17b5a7]/20 rounded-full blur-xl animate-pulse delay-2000"></div>
 
-        {/* Bottom Wave */}
-        <div className="absolute bottom-0 left-0 w-full">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-8 sm:h-12 lg:h-16">
-            <path d="M0,0V46.29C47.79,22.8,103.59,32.5,158,28,209.58,23.82,278.92,24.48,331,28c63.08,4.21,121.4,10.17,174,28,51.6,17.4,98.8,47.5,158,48,59.2,0.5,119.8-29.4,174-48,51.6-17.7,98.4-10.1,158-28,46.8-14.1,87.2-40.8,131-48V0Z" fill="white"></path>
-          </svg>
-        </div>
-      </section>
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24">
+    <div className="text-center text-white">
+      <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+        <Headphones className="h-3 w-3 sm:h-4 sm:w-4 mr-2 text-[#17b5a7]" />
+        We're Here to Help
+      </div>
+      
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 px-2">
+        Get in <span className="text-[#17b5a7]">Touch</span>
+      </h1>
+      
+      <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 font-medium mb-3 sm:mb-4 px-4">
+        Questions? Feedback? We would love to hear from you.
+      </p>
+      
+      <p className="text-base sm:text-lg text-blue-100 leading-relaxed max-w-2xl mx-auto px-4">
+        Our dedicated support team is here to help you with any questions about the PayNasi secure escrow platform. Reach out anytime!
+      </p>
+    </div>
+  </div>
+
+  {/* Bottom Wave */}
+  <div className="absolute bottom-0 left-0 w-full">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-8 sm:h-12 lg:h-16">
+      <path d="M0,0V46.29C47.79,22.8,103.59,32.5,158,28,209.58,23.82,278.92,24.48,331,28c63.08,4.21,121.4,10.17,174,28,51.6,17.4,98.8,47.5,158,48,59.2,0.5,119.8-29.4,174-48,51.6-17.7,98.4-10.1,158-28,46.8-14.1,87.2-40.8,131-48V0Z" fill="white"></path>
+    </svg>
+  </div>
+</section>
 
       {/* Contact Methods */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
