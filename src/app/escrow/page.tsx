@@ -37,13 +37,13 @@ const EscrowPage = () => {
               Trust in Every Transaction
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-blue-100 font-medium leading-tight">
-              PayNasi's escrow ensures safe, fair, and transparent deals.
+              The PayNasi escrow ensures safe, fair, and transparent deals.
             </p>
           </div>
 
           {/* Description */}
           <p className="text-base sm:text-lg text-blue-100 leading-relaxed max-w-2xl lg:max-w-3xl">
-            PayNasi's escrow process protects both buyers and sellers by securely holding funds until all terms are met. From agreement to delivery and confirmation, we ensure trust and transparency every step of the way.
+            The PayNasi escrow process protects both buyers and sellers by securely holding funds until all terms are met. From agreement to delivery and confirmation, we ensure trust and transparency every step of the way.
           </p>
 
           {/* Escrow Steps */}
@@ -61,7 +61,7 @@ const EscrowPage = () => {
                 <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#17b5a7] text-white flex items-center justify-center text-xs sm:text-sm font-bold flex-shrink-0">2</span>
                 <div className="min-w-0">
                   <h3 className="text-base sm:text-lg font-semibold text-white leading-tight">Buyer Deposits Payment</h3>
-                  <p className="text-sm text-blue-100 mt-1">The buyer deposits funds into PayNasi's secure escrow account via MPESA.</p>
+                  <p className="text-sm text-blue-100 mt-1">The buyer deposits funds into the PayNasi secure escrow account via MPESA.</p>
                   <button className="flex items-center text-sm text-[#e01c4e] mt-2 hover:text-[#c01640] transition-all duration-200">
                     <span>Learn More</span>
                     <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1" />
@@ -95,7 +95,7 @@ const EscrowPage = () => {
 
           {/* Benefits List */}
           <div className="space-y-3 sm:space-y-4">
-            <h2 className="text-xl sm:text-2xl font-semibold text-white">Why Use PayNasi's Escrow?</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white">Why Use the PayNasi Escrow?</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#17b5a7] flex-shrink-0" />

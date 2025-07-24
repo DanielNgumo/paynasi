@@ -37,13 +37,13 @@ const BuyerPage = () => {
               Shop with Confidence
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-blue-100 font-medium leading-tight">
-              PayNasi ensures your money is safe until you're satisfied.
+              PayNasi ensures your money is safe until you are satisfied.
             </p>
           </div>
 
           {/* Description */}
           <p className="text-base sm:text-lg text-blue-100 leading-relaxed max-w-2xl lg:max-w-3xl">
-            PayNasi protects buyers by holding funds securely in escrow until you've inspected and confirmed your purchase. Whether you're buying a phone, furniture, or a service, we've got you covered with total transaction protection.
+            PayNasi protects buyers by holding funds securely in escrow until you have inspected and confirmed your purchase. Whether you are buying a phone, furniture, or a service, we have got you covered with total transaction protection.
           </p>
 
           {/* Benefits List */}
@@ -66,14 +66,14 @@ const BuyerPage = () => {
               <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#17b5a7] flex-shrink-0 mt-0.5" />
               <div className="min-w-0">
                 <h3 className="text-base sm:text-lg font-semibold text-white leading-tight">Total Fund Protection</h3>
-                <p className="text-sm text-blue-100 mt-1">Your money is held safely in escrow until you're satisfied with your purchase.</p>
+                <p className="text-sm text-blue-100 mt-1">Your money is held safely in escrow until you are satisfied with your purchase.</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
               <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#17b5a7] flex-shrink-0 mt-0.5" />
               <div className="min-w-0">
                 <h3 className="text-base sm:text-lg font-semibold text-white leading-tight">Verify Before You Buy</h3>
-                <p className="text-sm text-blue-100 mt-1">Avoid scams by ensuring funds are only released when you're confident.</p>
+                <p className="text-sm text-blue-100 mt-1">Avoid scams by ensuring funds are only released when you are confident.</p>
               </div>
             </div>
           </div>
@@ -91,6 +91,7 @@ const BuyerPage = () => {
       {/* Bottom Wave - Responsive height */}
       <div className="absolute bottom-0 left-0 w-full">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 sm:h-16">
+          <path d="M0,0V46.29C47.79,22.8,103.59,32.5,158,28,209.58,23.82,278.92,24.48,331,28c63.08,4.21,121.4,10.17,174,28,51.6,17.4,98.8,47.5,158,48,59.2,0.5,119.8-29.4,174-48,51.6-17.7,98.4-10.1,158-28,46.8-14.1,87.2-40.8,131-48V0Z" fill="white"></path>
           <path d="M0,0V46.29C47.79,22.8,103.59,32.5,158,28,209.58,23.82,278.92,24.48,331,28c63.08,4.21,121.4,10.17,174,28,51.6,17.4,98.8,47.5,158,48,59.2,0.5,119.8-29.4,174-48,51.6-17.7,98.4-10.1,158-28,46.8-14.1,87.2-40.8,131-48V0Z" fill="white"></path>
         </svg>
       </div>
