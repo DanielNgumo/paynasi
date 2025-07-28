@@ -26,22 +26,22 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/logo.ico',
+        url: 'favicon.ico',
         sizes: 'any',
       },
       {
-        url: '/logo.ico',
+        url: 'favicon.ico',
         sizes: '16x16',
         type: 'image/x-icon',
       },
       {
-        url: '/logo.ico',
+        url: 'favicon.ico',
         sizes: '32x32',
         type: 'image/x-icon',
       },
     ],
-    shortcut: '/logo.ico',
-    apple: '/logo.ico', // For iOS devices
+    shortcut: 'favicon.ico',
+    apple: 'favicon.ico', // For iOS devices
   },
   // Optional: Add more metadata for better SEO
   metadataBase: new URL('https://paynasi.com'), // Replace with your actual domain
