@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Shield, CheckCircle, Download, Play, Star, Users, Lock } from 'lucide-react';
-import Image from "next/image";
+import Image from 'next/image';
 
 const HeroSection = () => {
   return (
@@ -102,87 +102,43 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Column - Visual */}
-          <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
-            {/* Phone Mockup */}
-            <div className="relative w-64 h-80 sm:w-72 sm:h-88 md:w-80 md:h-96 lg:w-72 lg:h-88 xl:w-80 xl:h-96 2xl:w-96 2xl:h-[28rem] bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl sm:rounded-3xl shadow-2xl">
-              {/* Phone Screen */}
-              <div className="absolute top-3 left-3 right-3 bottom-3 sm:top-4 sm:left-4 sm:right-4 sm:bottom-4 bg-white rounded-xl sm:rounded-2xl overflow-hidden">
-                {/* App Interface */}
-                <div className="h-full bg-gradient-to-b from-blue-50 to-white p-4 sm:p-6 2xl:p-8">
-                  {/* Header */}
-                  <div className="flex items-center justify-between mb-4 sm:mb-6 2xl:mb-8">
-                    <div className="flex items-center space-x-2">
-                      {/* Real logo */}
-                      <Image
-                        src="/images/logo.jpg"
-                        alt="PayNasi logo"
-                        width={20}
-                        height={20}
-                        className="h-5 w-5 sm:h-6 sm:w-6 2xl:h-8 2xl:w-8 object-contain"
-                        priority
-                      />
-                      <span className="font-bold text-[#15479e] text-sm sm:text-base 2xl:text-lg">PayNasi</span>
-                    </div>
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 2xl:w-10 2xl:h-10 bg-gray-200 rounded-full"></div>
-                  </div>
-                  
-                  {/* Transaction Card */}
-                  <div className="bg-white rounded-xl shadow-md p-3 sm:p-4 2xl:p-5 mb-3 sm:mb-4 2xl:mb-6">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs sm:text-sm 2xl:text-base font-medium text-gray-600">Transaction</span>
-                      <span className="text-xs 2xl:text-sm bg-[#17b5a7]/20 text-[#17b5a7] px-2 py-1 rounded-full">In Progress</span>
-                    </div>
-                    <div className="text-base sm:text-lg 2xl:text-xl font-bold text-[#15479e] mb-1">KSH 15,000</div>
-                    <div className="text-xs sm:text-sm 2xl:text-base text-gray-500">iPhone 13 Pro</div>
-                  </div>
 
-                  {/* Steps */}
-                  <div className="space-y-2 sm:space-y-3 2xl:space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 2xl:w-8 2xl:h-8 bg-[#17b5a7] rounded-full flex items-center justify-center">
-                        <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 2xl:h-5 2xl:w-5 text-white" />
-                      </div>
-                      <span className="text-xs sm:text-sm 2xl:text-base text-gray-700">Payment deposited</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 2xl:w-8 2xl:h-8 bg-[#17b5a7] rounded-full flex items-center justify-center">
-                        <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 2xl:h-5 2xl:w-5 text-white" />
-                      </div>
-                      <span className="text-xs sm:text-sm 2xl:text-base text-gray-700">Seller confirmed</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 2xl:w-8 2xl:h-8 bg-blue-200 rounded-full flex items-center justify-center">
-                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 2xl:w-3 2xl:h-3 bg-[#15479e] rounded-full"></div>
-                      </div>
-                      <span className="text-xs sm:text-sm 2xl:text-base text-gray-700">Awaiting delivery</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+{/* Right Column - Visual */}
+<div className="relative order-1 lg:order-2 flex justify-center lg:justify-end items-center py-8 lg:py-12">
+  {/* Business Vector SVG - Now with larger dimensions and relaxed constraints */}
+  <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl">
+    <Image
+      src="/images/vector.svg"
+      alt="PayNasi Business Vector"
+      width={600}  // Increased from 400
+      height={600} // Increased from 400
+      className="w-full h-auto"
+      priority
+    />
 
-            {/* Floating Cards - Hidden on mobile */}
-            <div className="hidden md:block absolute -top-6 -left-6 lg:-top-8 lg:-left-8 2xl:-top-10 2xl:-left-10 bg-white/90 backdrop-blur-sm rounded-xl p-3 lg:p-4 2xl:p-5 shadow-xl">
-              <div className="flex items-center space-x-2 lg:space-x-3 2xl:space-x-4">
-                <Lock className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10 text-[#17b5a7]" />
-                <div>
-                  <div className="font-semibold text-[#15479e] text-sm lg:text-base 2xl:text-lg">Secure</div>
-                  <div className="text-xs lg:text-sm 2xl:text-base text-gray-600">Bank-level security</div>
-                </div>
-              </div>
-            </div>
+    {/* Floating Cards - Adjusted positioning for larger image */}
+    <div className="hidden md:block absolute top-[-2rem] left-[-2rem] lg:top-[-3rem] lg:left-[-3rem] 2xl:top-[-4rem] 2xl:left-[-4rem] bg-white/90 backdrop-blur-sm rounded-xl p-3 lg:p-4 2xl:p-5 shadow-xl">
+      <div className="flex items-center space-x-2 lg:space-x-3 2xl:space-x-4">
+        <Lock className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10 text-[#17b5a7]" />
+        <div>
+          <div className="font-semibold text-[#15479e] text-sm lg:text-base 2xl:text-lg">Secure</div>
+          <div className="text-xs lg:text-sm 2xl:text-base text-gray-600">Bank-level security</div>
+        </div>
+      </div>
+    </div>
 
-            <div className="hidden md:block absolute -bottom-6 -right-6 lg:-bottom-8 lg:-right-8 2xl:-bottom-10 2xl:-right-10 bg-white/90 backdrop-blur-sm rounded-xl p-3 lg:p-4 2xl:p-5 shadow-xl">
-              <div className="flex items-center space-x-2 lg:space-x-3 2xl:space-x-4">
-                <Users className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10 text-[#e01c4e]" />
-                <div>
-                  <div className="font-semibold text-[#15479e] text-sm lg:text-base 2xl:text-lg">Trusted</div>
-                  <div className="text-xs lg:text-sm 2xl:text-base text-gray-600">1000+ users</div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="hidden md:block absolute bottom-[-2rem] right-[-2rem] lg:bottom-[-3rem] lg:right-[-3rem] 2xl:bottom-[-4rem] 2xl:right-[-4rem] bg-white/90 backdrop-blur-sm rounded-xl p-3 lg:p-4 2xl:p-5 shadow-xl">
+      <div className="flex items-center space-x-2 lg:space-x-3 2xl:space-x-4">
+        <Users className="h-6 w-6 lg:h-8 lg:w-8 2xl:h-10 2xl:w-10 text-[#e01c4e]" />
+        <div>
+          <div className="font-semibold text-[#15479e] text-sm lg:text-base 2xl:text-lg">Trusted</div>
+          <div className="text-xs lg:text-sm 2xl:text-base text-gray-600">1000+ users</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
 

@@ -15,6 +15,7 @@ import {
   Smartphone,
   DollarSign
 } from 'lucide-react';
+import Image from 'next/image';
 
 const HowItWorksSection = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -26,6 +27,7 @@ const HowItWorksSection = () => {
       subtitle: "(Off Platform)",
       description: "Buyer and seller agree independently on the product, service, price, and delivery terms.",
       icon: Handshake,
+      image: "/images/agree.png",
       color: "text-[#17b5a7]",
       bgColor: "bg-[#17b5a7]",
       details: [
@@ -41,6 +43,7 @@ const HowItWorksSection = () => {
       subtitle: "Secure Escrow",
       description: "The buyer pays into the PayNasi secure escrow account via mobile money (MPESA).",
       icon: CreditCard,
+      image: "/images/deposit.png",
       color: "text-[#e01c4e]",
       bgColor: "bg-[#e01c4e]",
       details: [
@@ -56,6 +59,7 @@ const HowItWorksSection = () => {
       subtitle: "Fulfillment",
       description: "The seller fulfills the agreed terms and delivers the product or service.",
       icon: Package,
+      image: "/images/6617.jpg",
       color: "text-[#15479e]",
       bgColor: "bg-[#15479e]",
       details: [
@@ -71,6 +75,7 @@ const HowItWorksSection = () => {
       subtitle: "Completion",
       description: "Once the buyer confirms satisfaction, PayNasi releases the funds to the seller.",
       icon: CheckCircle,
+      image: "/images/funds.jpg",
       color: "text-[#17b5a7]",
       bgColor: "bg-[#17b5a7]",
       details: [
@@ -268,13 +273,15 @@ const HowItWorksSection = () => {
                   ))}
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 2xl:p-8 h-48 xl:h-64 2xl:h-72 flex items-center justify-center">
-                <div className="text-center">
-                  <div className={`w-16 h-16 xl:w-24 xl:h-24 2xl:w-32 2xl:h-32 rounded-full ${steps[activeStep].bgColor} flex items-center justify-center mx-auto mb-3 xl:mb-4 2xl:mb-6`}>
-                    {React.createElement(steps[activeStep].icon, { className: "h-8 w-8 xl:h-12 xl:w-12 2xl:h-16 2xl:w-16 text-white" })}
-                  </div>
-                  <div className="text-gray-500 text-xs xl:text-sm 2xl:text-base">Step {activeStep + 1} of {steps.length}</div>
-                </div>
+              <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl h-48 xl:h-64 2xl:h-72 overflow-hidden flex items-center justify-center p-4">
+                <Image
+                  src={steps[activeStep].image}
+                  alt={`Step ${activeStep + 1}`}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 1280px) 192px, (max-width: 1536px) 256px, 288px"
+                  priority
+                />
               </div>
             </div>
           </div>
