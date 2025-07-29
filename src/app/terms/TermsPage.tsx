@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { 
-  ArrowRight, 
   Shield, 
   ChevronDown, 
   FileText, 
@@ -16,7 +15,6 @@ import {
   Edit, 
   Power,
   Clock,
-  CheckCircle,
   Eye,
   Phone,
   Home,
@@ -141,12 +139,12 @@ const TermsPage = () => {
       icon: RefreshCw,
       color: "from-[#e01c4e] to-[#15479e]",
       category: "transaction",
-      content: [
-        "Refunds may occur under the following circumstances:",
-        "**Order Not Fulfilled:** If a seller fails to fulfill an order (e.g., does not ship the product or fails to deliver within the agreed timeframe), the buyer will be refunded the transaction amount less any platform fees and applicable transaction charges.",
-        "**Product Returned After Inspection:** If a buyer initiates a return within the 1-hour inspection window and completes the return process according to platform guidelines, the buyer will be refunded once the return is confirmed.",
-        "**Invalid Refund Claims:** No refund will be processed if the buyer fails to initiate the return within the allowed inspection period or the return is not completed using the required return code protocol."
-      ]
+content: [
+  "Refunds may occur under the following circumstances:",
+  "**Order Not Fulfilled:** If a seller fails to fulfill an order (e.g., does not ship the product or fails to deliver within the agreed timeframe), the buyer will be refunded the transaction amount less any platform fees and applicable transaction charges.",
+  "**Product Returned After Inspection:** If a buyer initiates a return within the 1-hour inspection window and completes the return process according to platform guidelines, the buyer will be refunded once the return is confirmed.",
+  "**Invalid Refund Claims:** No refund will be processed if the buyer fails to initiate the return within the allowed inspection period or the return is not completed using the required return code protocol."
+]
     },
     {
       id: 8,

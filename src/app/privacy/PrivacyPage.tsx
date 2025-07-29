@@ -1,7 +1,7 @@
 "use client";
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { ArrowRight, Shield, ChevronDown, ChevronUp, FileText, Users, CreditCard, Lock, Edit, Download, AlertTriangle, Globe } from 'lucide-react';
+import { ArrowRight, Shield, ChevronDown, FileText, Users, Lock, Edit, Download, AlertTriangle, Globe } from 'lucide-react';
 import jsPDF from 'jspdf';
 
 const PrivacyPage = () => {
@@ -165,7 +165,7 @@ const PrivacyPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 py-20">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[90rem] 2xl:max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10">
         {/* Stunning Header */}
         <div className="text-center mb-16 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-[#e01c4e]/10 via-[#17b5a7]/10 to-[#15479e]/10 rounded-3xl blur-3xl"></div>
@@ -254,7 +254,9 @@ const PrivacyPage = () => {
             </Link>
             <Link
               href="/"
-              className="bg-white/20 backdrop-blur-sm text-white px-8 py-3 rounded-xl font-semibold hover:bg-white/30 transition-all duration-300 transform hover:scale-105 border border-white/30 inline-flex items-center justify-center space-x-2"
+              className="bg-white/20 backdrop-blur-sm text-white px-8 py-3 rounded-xl font-semibold hover:bg-white
+
+/30 transition-all duration-300 transform hover:scale-105 border border-white/30 inline-flex items-center justify-center space-x-2"
             >
               <span>Back to Home</span>
               <ArrowRight className="h-4 w-4" />

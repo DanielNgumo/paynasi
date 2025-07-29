@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { 
-  ArrowRight, 
+
   Shield, 
   ChevronDown, 
   FileText, 
@@ -10,17 +10,13 @@ import {
   AlertTriangle, 
   Download,
   Clock,
-  CheckCircle,
-  XCircle,
   Eye,
-  Users,
   Phone,
   Home
 } from 'lucide-react';
 
 const DisputeResolutionPage = () => {
-  const [expandedSections, setExpandedSections] = useState<Set<number>>(new Set([1]));
-  const [activeTab, setActiveTab] = useState('overview');
+const [expandedSections, setExpandedSections] = useState<Set<number>>(new Set([1]));
 
   const toggleSection = (sectionId: number) => {
     const newExpanded = new Set(expandedSections);
